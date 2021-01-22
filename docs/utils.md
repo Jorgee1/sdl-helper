@@ -42,7 +42,7 @@ Mostly used to provide contrast on menus.
 ## Collition detection
 
 ```c
-    int check_collition(SDL_Rect, SDL_Rect);
+int check_collition(SDL_Rect, SDL_Rect);
 ```
 
 function to check if two rects are intersecting.

@@ -13,6 +13,8 @@ To use on another project, the folder 'include' when building the object files, 
 
 # Enviroment Variables
 
+The following variables need to be set.
+
 USER_INCLUDE: Location of all the .h diles
 USER_LIB: location of the .a file resulted from running build.sh
 

@@ -1,4 +1,4 @@
-#include "sdl.h"
+#include "utils.h"
 
 int check_collition(SDL_Rect A, SDL_Rect B)
 {

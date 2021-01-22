@@ -1,7 +1,7 @@
 #include <SDL.h>
 
-#ifndef SDL_UTILS_H
-#define SDL_UTILS_H
+#ifndef UTILS_H
+#define UTILS_H
 
 enum EXIT_SATE
 {
@@ -9,16 +9,16 @@ enum EXIT_SATE
 	SDL_GAME_EXIT
 };
 
-struct Colors
+typedef struct
 {
 	SDL_Color red;
 	SDL_Color green;
 	SDL_Color blue;
 	SDL_Color white;
 	SDL_Color black;
-};
+} Colors;
 
-struct Screen
+typedef struct
 {
 	char *name;
 	int view_index;
@@ -28,7 +28,7 @@ struct Screen
 	SDL_Color clear_color;
 	SDL_Window* window;
 	SDL_Renderer* renderer;
-};
+} Screen;
 
 int check_collition(SDL_Rect, SDL_Rect);
 

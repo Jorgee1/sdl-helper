@@ -1,17 +1,17 @@
-# Input
+# Controller
 
 Code to handle player input.
 
 ## Button
 
 ```c
-struct Button
+typedef struct
 {
     int key;
     int state;
     int action_state;
     int action_flag;
-};
+} Button;
 ```
 This struct holds all the date related to the button
 

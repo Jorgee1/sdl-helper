@@ -11,7 +11,7 @@ Run build.sh.
 
 To use on another project, the folder 'include' when building the object files, and the file 'lib/sdl-helper.a' must be added to the when building the binary.
 
-# Enviroment Variables
+## Enviroment Variables
 
 The following variables need to be set.
 

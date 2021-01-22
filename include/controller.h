@@ -22,6 +22,6 @@ typedef struct
     Button start;
 } Input;
 
-void update_buttons(Button* buttons[], int size);
+void update_buttons(Button*[], int);
 
 #endif

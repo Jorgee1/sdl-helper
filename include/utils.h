@@ -31,5 +31,6 @@ typedef struct
 } Screen;
 
 int check_collition(SDL_Rect, SDL_Rect);
+void set_render_draw_color(SDL_Renderer*, SDL_Color);
 
 #endif

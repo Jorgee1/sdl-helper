@@ -47,3 +47,11 @@ int check_collition(SDL_Rect, SDL_Rect);
 
 function to check if two rects are intersecting.
 Returns 1 if they are, 0 if they aren't.
+
+# Set Render Color
+
+```c
+void set_render_draw_color(SDL_Renderer*, SDL_Color);
+```
+
+function to set the render color using the SDL_Color structure.

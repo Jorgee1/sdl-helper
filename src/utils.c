@@ -1,5 +1,16 @@
 #include "utils.h"
 
+void set_render_draw_color(SDL_Renderer* renderer, SDL_Color color)
+{
+    SDL_SetRenderDrawColor(
+        renderer,
+        color.r,
+        color.g, 
+        color.b,
+        color.a
+    );
+}
+
 int check_collition(SDL_Rect A, SDL_Rect B)
 {
     /// PARA A

@@ -50,3 +50,11 @@ Directional pad:
 * left
 * right
 
+## Update buttons
+
+```c
+void update_buttons(Button* buttons[], int size);
+```
+
+Must be called on every frame to update the state of the buttons.
+

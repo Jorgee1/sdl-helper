@@ -1,5 +1,7 @@
 #include <SDL.h>
 
+#include <controller.h>
+
 #ifndef UTILS_H
 #define UTILS_H
 
@@ -28,8 +30,19 @@ typedef struct
     SDL_Color clear_color;
     SDL_Window* window;
     SDL_Renderer* renderer;
+
+    Input input;
 } Screen;
 
+int init_screen(
+    Screen *,
+    char *,
+    int,
+    int,
+    SDL_Color,
+    int,
+    int
+);
 int check_collition(SDL_Rect, SDL_Rect);
 void set_render_draw_color(SDL_Renderer*, SDL_Color);
 

@@ -1,5 +1,48 @@
 #include "utils.h"
 
+int init_screen(
+    Screen *screen,
+    char *name,
+    int w,
+    int h,
+    SDL_Color clear_color,
+    int init_flags,
+    int render_flags
+)
+{
+    screen->rect.x = 0;
+    screen->rect.y = 0;
+    screen->rect.w = w;
+    screen->rect.h = h;
+
+    screen->name = name;
+    screen->clear_color = clear_color;
+    screen->exit = SDL_GAME_RUN;
+
+
+    if(SDL_Init(init_flags)) return 1;
+
+    screen->window = SDL_CreateWindow(
+        name,
+        SDL_WINDOWPOS_UNDEFINED,
+        SDL_WINDOWPOS_UNDEFINED,
+        w,
+        h,
+        SDL_WINDOW_HIDDEN
+    );
+    if (screen->window == NULL) return 1;
+
+
+    screen->renderer = SDL_CreateRenderer(
+        screen->window, -1, render_flags
+    );
+    if (screen->renderer == NULL) return 1;
+
+    SDL_ShowWindow(screen->window);
+
+    return 0;
+}
+
 void set_render_draw_color(SDL_Renderer* renderer, SDL_Color color)
 {
     SDL_SetRenderDrawColor(

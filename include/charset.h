@@ -12,14 +12,16 @@ typedef struct
     int w;	
 } Letter;
 
-void create_charset(SDL_Renderer*, TTF_Font*, Letter[], int, SDL_Color);
-
 int get_string_w(Letter*, char[]);
 
 int get_string_h(Letter*, char[]);
 
 void destroy_charset(Letter[], int);
 
+void create_charset(SDL_Renderer*, TTF_Font*, Letter[], int, SDL_Color);
+
 void render_string(SDL_Renderer*, int, int, Letter*, char[]);
+
+void render_int(SDL_Renderer*, int, int, Letter*, int);
 
 #endif

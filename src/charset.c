@@ -78,3 +78,11 @@ void render_string(SDL_Renderer* renderer, int x, int y, Letter* letters, char w
         rect.x += letters[word_index].w;
     }
 }
+
+void render_int(SDL_Renderer* renderer, int x, int y, Letter* letters, int value)
+{
+	char buffer[10];
+	sprintf(buffer, "%d", value);
+
+	render_string(renderer, x, y, letters, buffer);
+}

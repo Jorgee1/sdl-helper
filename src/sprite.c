@@ -115,8 +115,8 @@ void map_render(SDL_Renderer *renderer, Map *map, int upscale)
             Sprite *sprites = &map->tiles->sprites[index];
 
             SDL_Rect rect;
-            rect.x = x * sprites->rect.w * upscale;
-            rect.y = y * sprites->rect.h * upscale;
+            rect.x = map->size.x + x * sprites->rect.w * upscale;
+            rect.y = map->size.y + y * sprites->rect.h * upscale;
             rect.w = sprites->rect.w * upscale;
             rect.h = sprites->rect.h * upscale; 
 

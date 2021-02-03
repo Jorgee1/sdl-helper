@@ -41,6 +41,7 @@ typedef struct
 } Map;
 
 void init_map(Map *, TileSet *, int, int);
+void load_map(Map *, TileSet *, char *);
 void map_render(SDL_Renderer *, Map *, int);
 void delete_map(Map *);
 
@@ -51,5 +52,6 @@ typedef struct
     Sprite *sprites;
 } Animation;
 
+void delete_animation(Animation *);
 
 #endif

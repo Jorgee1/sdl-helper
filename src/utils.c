@@ -43,6 +43,16 @@ int init_screen(
     return 0;
 }
 
+void delete_screen(Screen *screen)
+{
+    SDL_DestroyRenderer(screen->renderer);
+    SDL_DestroyWindow(screen->window);
+    screen->renderer = NULL;
+    screen->window = NULL;
+
+    SDL_Quit();
+}
+
 void set_render_draw_color(SDL_Renderer* renderer, SDL_Color color)
 {
     SDL_SetRenderDrawColor(

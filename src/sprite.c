@@ -90,6 +90,35 @@ void init_map(Map *map, TileSet *tiles, int w, int h)
     }
 }
 
+void load_map(Map *map, TileSet *tileset, char *path)
+{
+    FILE *file = fopen(path, "r");
+    uint32_t w = 0;
+    uint32_t h = 0;
+    fread(&w, sizeof(uint32_t), 1, file);
+    fread(&h, sizeof(uint32_t), 1, file);
+
+    map->tiles  = tileset;
+    map->size.x = 0;
+    map->size.y = 0;
+    map->size.h = (int) h;
+    map->size.w = (int) w;
+    map->indexes = malloc(sizeof(int *) * h);
+    for (int y = 0; y < h; y++)
+    {
+        map->indexes[y] = malloc(sizeof(int) * w); 
+        for (int x = 0; x < w; x++)
+        {
+            uint32_t index = 0;
+            fread(&index, sizeof(uint32_t), 1, file);
+            map->indexes[y][x] = (int) index;
+        }
+    }
+
+    fclose(file);
+    file = NULL;
+}
+
 void delete_map(Map *map)
 {
     for (int y = 0; y < map->size.h ;y++)
@@ -128,5 +157,15 @@ void map_render(SDL_Renderer *renderer, Map *map, int upscale)
             );
         }
     }
+}
 
+
+// Animation
+
+void delete_animation(Animation *animation)
+{
+    free(animation->sprites);
+    animation->sprites = NULL;
+    animation->n = 0;
+    animation->speed = 0;
 }

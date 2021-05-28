@@ -38,6 +38,9 @@ int init_screen(
     );
     if (screen->renderer == NULL) return 1;
 
+    screen->mouse.position = (SDL_Rect) {0, 0, 10, 10};
+    screen->mouse.left_button = false;
+
     SDL_ShowWindow(screen->window);
 
     return 0;

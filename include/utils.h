@@ -1,3 +1,4 @@
+#include <stdbool.h>
 #include <SDL.h>
 
 #include <controller.h>
@@ -22,6 +23,13 @@ typedef struct
 
 typedef struct
 {
+    SDL_Rect position;
+    bool left_button;
+} Mouse;
+
+
+typedef struct
+{
     char *name;
     int view_index;
     int exit;
@@ -32,6 +40,7 @@ typedef struct
     SDL_Renderer* renderer;
 
     Input input;
+    Mouse mouse;
 } Screen;
 
 int init_screen(

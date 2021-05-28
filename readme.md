@@ -2,7 +2,7 @@
 
 
 Library with a couple of usefull structs and functions for SDL.
-* [Documentation](docs/index.md)
+* [Documentation](https://jorgee1.github.io/sdl-helper/)
 
 ## Compile
 

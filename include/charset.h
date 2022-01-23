@@ -4,6 +4,13 @@
 #ifndef CHARSET_H
 #define CHARSET_H
 
+/** @brief
+    Sructure to handle ASCII letters and text using SDL_TTF.
+*/
+
+/** This is My Class!
+    \class Letter
+    */
 typedef struct
 {
     char letter;
@@ -12,7 +19,11 @@ typedef struct
     int w;	
 } Letter;
 
-int get_string_w(Letter*, char[]);
+
+/** A public member function of Letter
+    \memberof Letter
+    */
+int get_string_w(Letter* letters, char word[]);
 
 int get_string_h(Letter*, char[]);
 

@@ -1,5 +1,10 @@
 #include "charset.h"
 
+/** A public member function of Letter
+    \param letters* Is the font array
+    \param word* Is the string
+    \memberof Letter
+    */
 int get_string_w(Letter* letters, char word[])
 {
     int acc = 0;

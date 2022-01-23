@@ -1,7 +1,7 @@
 #include <stdbool.h>
 #include <SDL.h>
 
-#include <controller.h>
+#include "controller.h"
 
 #ifndef UTILS_H
 #define UTILS_H
@@ -56,7 +56,7 @@ int init_screen(
 void delete_screen(Screen *);
 
 
-int check_collition(SDL_Rect, SDL_Rect);
+int check_collition(SDL_FRect, SDL_FRect);
 void set_render_draw_color(SDL_Renderer*, SDL_Color);
 
 #endif
